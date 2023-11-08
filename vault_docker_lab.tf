@@ -112,7 +112,7 @@ resource "docker_container" "vault-docker-lab" {
 
 resource "null_resource" "active_node_init" {
   provisioner "local-exec" {
-    command = "while ! curl --insecure --fail --silent https://127.0.0.1:8200/v1/sys/seal-status --output /dev/null ; do printf '.' ; sleep 4 ; done ; vault operator init -key-shares=1 -key-threshold=1 > ${path.cwd}/.vault_docker_lab_1_init"
+    command = "while ! curl --insecure --fail --silent https://127.0.0.1:8200/v1/sys/seal-status --output /dev/null ; do printf '.' ; sleep 4 ; done ; vault operator init -n 1 -t 1 > ${path.cwd}/.vault_docker_lab_1_init"
     environment = {
       VAULT_ADDR = "https://127.0.0.1:8200"
       VAULT_CACERT = "${path.cwd}/containers/vault_docker_lab_1/certs/vault_docker_lab_ca.pem"
