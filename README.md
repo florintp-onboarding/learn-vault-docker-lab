@@ -339,6 +339,7 @@ If you are new to Vault, check out the **Get Started** tutorial series:
 - [HCP Vault Quick Start](https://developer.hashicorp.com/vault/tutorials/cloud)
 - [UI Quick Start](https://developer.hashicorp.com/vault/tutorials/getting-started-ui)
 - [Docker Vault Enteprise TAGS](https://registry.hub.docker.com/r/hashicorp/vault-enterprise/tags)
+
 The tutorial library also has a wide range of intermediate and advanced tutorials with integrated hands on labs.
 
 The [API documentation](https://developer.hashicorp.com/vault/api-docs) and [product documentation](https://developer.hashicorp.com/vault/docs) are also great learning resources.
