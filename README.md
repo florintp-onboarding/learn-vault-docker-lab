@@ -169,10 +169,13 @@ There are just a handful of steps to make your own Vault Docker Lab.
    [vault-docker-lab] Applying Terraform configuration ...Done.
    [vault-docker-lab] Checking Vault active node status ...Done.
    [vault-docker-lab] Checking Vault initialization status ...Done.
-   [vault-docker-lab] Unsealing cluster nodes .....vault_docker_lab_2. vault_docker_lab_3. vault_docker_lab_4. vault_docker_lab_5. Done.
+   [vault-docker-lab] Unsealing cluster nodes .....node 2. node 3. node 4. node 5. Done.
    [vault-docker-lab] Enable audit device ...Done.
    [vault-docker-lab] Export VAULT_ADDR for the active node: export VAULT_ADDR=https://127.0.0.1:8200
-   [vault-docker-lab] Login to Vault with initial root token: vault login hvs.euAmS2Wc0ff3339uxTKYVtqK
+   [vault-docker-lab] Login to Vault with initial root token: vault login hvs.nj4LJqdKwec5VHYT8Kq1cuVm
+   [vault-docker-lab] [Optional] Setup an userpass by executing: cd setup_vault && export VAULT_TOKEN=hvs.nj4LJqdKwec5VHYT8Kq1cuVm
+   [vault-docker-lab] [Optional] Deploy setup by executing: terraform init && terraform apply -auto-approve
+   [vault-docker-lab] [Optional] Login using the new userpass method vault login -method=userpass -path=myuserpass username=dockertest
    ```
 
 1. Follow the instructions to set an appropriate `VAULT_ADDR` environment variable, and login to Vault with the initial root token value.
@@ -211,6 +214,10 @@ Vault Docker Lab tries to keep current and offer the latest available Vault Dock
 
 ```shell
 TF_VAR_vault_version=1.11.0 make
+```
+or for Enterprise version
+```shell
+export TF_VAR_vault_license=$VAULT_LICENSE && TF_VAR_vault_version=1.14.3-ent TF_VAR_vault_edition=vault-enterprise  make
 ```
 
 > **Tip**: Vault versions >= 1.11.0 are recommended for ideal Integrated Storage support.
@@ -331,7 +338,7 @@ If you are new to Vault, check out the **Get Started** tutorial series:
 - [CLI Quick Start](https://developer.hashicorp.com/vault/tutorials/getting-started)
 - [HCP Vault Quick Start](https://developer.hashicorp.com/vault/tutorials/cloud)
 - [UI Quick Start](https://developer.hashicorp.com/vault/tutorials/getting-started-ui)
-
+- [Docker Vault Enteprise TAGS](https://registry.hub.docker.com/r/hashicorp/vault-enterprise/tags)
 The tutorial library also has a wide range of intermediate and advanced tutorials with integrated hands on labs.
 
 The [API documentation](https://developer.hashicorp.com/vault/api-docs) and [product documentation](https://developer.hashicorp.com/vault/docs) are also great learning resources.
