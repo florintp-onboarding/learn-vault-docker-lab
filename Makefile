@@ -15,6 +15,9 @@ stage: prerequisites provision done-stage
 done:
 	@echo "$(MY_NAME_IS) Export VAULT_ADDR for the active node: export VAULT_ADDR=https://127.0.0.1:8200"
 	@echo "$(MY_NAME_IS) Login to Vault with initial root token: vault login $$(grep 'Initial Root Token' ./.vault_docker_lab_1_init | awk '{print $$NF}')"
+	@echo "$(MY_NAME_IS) [Optional] Setup an userpass by executing: cd setup_vault && export VAULT_TOKEN=$$(grep 'Initial Root Token' ./.vault_docker_lab_1_init | awk '{print $$NF}') "
+	@echo "$(MY_NAME_IS) [Optional] Deploy setup by executing: terraform init && terraform apply -auto-approve"
+	@echo "$(MY_NAME_IS) [Optional] Login using the new userpass method vault login -method=userpass -path=myuserpass username=dockertest"
 
 done-stage:
 	@echo "$(MY_NAME_IS) Export VAULT_ADDR for the active node: export VAULT_ADDR=https://127.0.0.1:8200"
