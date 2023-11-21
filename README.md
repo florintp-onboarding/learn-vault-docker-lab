@@ -218,6 +218,7 @@ TF_VAR_vault_version=1.11.0 make
 or for Enterprise version
 ```shell
 export TF_VAR_vault_license=$VAULT_LICENSE && TF_VAR_vault_version=1.14.3-ent TF_VAR_vault_edition=vault-enterprise  make
+export TF_VAR_vault_license=$VAULT_LICENSE && TF_VAR_vault_version=1.15.2-ent TF_VAR_vault_edition=vault-enterprise  make
 ```
 
 > **Tip**: Vault versions >= 1.11.0 are recommended for ideal Integrated Storage support.
